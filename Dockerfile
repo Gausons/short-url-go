@@ -9,7 +9,7 @@ RUN go env -w GO111MODULE=on && \
 # 第二阶段：运行应用程序
 FROM alpine:latest
 WORKDIR /app
-COPY --from=build /app /app
-RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+COPY --from=build /app/app /app/app
+RUN apk add --no-cache libc6-compat
 COPY ./entrypoint.sh ./
-ENTRYPOINT [ "sh","entrypoint.sh" ]
+ENTRYPOINT [ "sh", "entrypoint.sh" ]
