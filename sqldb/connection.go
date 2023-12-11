@@ -24,7 +24,7 @@ func (db *Database) Connect() (*gorm.DB, error) {
 
 func dbConnection() {
 	db := &Database{
-		Host:     "82.157.236.163",
+		Host:     "testtstsst",
 		Port:     5432,
 		User:     "postgres",
 		Password: "password",
