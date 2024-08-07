@@ -1,5 +1,5 @@
 # 第一阶段：构建应用程序
-FROM golang:latest AS build
+FROM golang:1.21 AS build
 WORKDIR /app
 COPY . .
 RUN go env -w GO111MODULE=on && \
